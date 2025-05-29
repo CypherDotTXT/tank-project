@@ -1,18 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3drsrhkb1ojd"]
 
 [ext_resource type="Script" uid="uid://bchsqqbbyhjpt" path="res://scenes/Bullet.cs" id="1_mkf8s"]
+[ext_resource type="Texture2D" uid="uid://bd1a5b1gpdh8h" path="res://assets/sprites/Fire bullet/Small_fire_Bullet.png" id="2_y25gk"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y25gk"]
-size = Vector2(3, 3)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5glv"]
-size = Vector2(3, 3)
+[sub_resource type="CircleShape2D" id="CircleShape2D_y25gk"]
+radius = 2.9
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource("1_mkf8s")
 
 [node name="BulletSprite" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_y25gk")
+texture = ExtResource("2_y25gk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_l5glv")
+shape = SubResource("CircleShape2D_y25gk")

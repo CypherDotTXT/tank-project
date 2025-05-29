@@ -8,11 +8,13 @@ public partial class Tank : CharacterBody2D
 	[Export] public PackedScene BulletScene { get; set; }
 	private AnimationPlayer _animationPlayer;
 	private Node2D weapon;
+	private Marker2D muzzle;
 
 	public override void _Ready()
 	{
 		_animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		weapon = GetNode<Node2D>("Weapon");
+		muzzle = weapon.GetNode<Marker2D>("Muzzle");
 	}
 	public void tankWeaponMovement()
 	{
@@ -64,10 +66,10 @@ public partial class Tank : CharacterBody2D
 		Bullet bullet = BulletScene.Instantiate<Bullet>();
 		GetTree().CurrentScene.AddChild(bullet);
 
-		// Set bullet position to turret
-		bullet.GlobalPosition = weapon.GlobalPosition;
+		// Set bullet position to muzzle of weapon
+		bullet.GlobalPosition = muzzle.GlobalPosition;
 		//bullet direction
-		Vector2 direction = weapon.Transform.X.Normalized();
+		Vector2 direction = (GetGlobalMousePosition() - muzzle.GlobalPosition).Normalized();
 		bullet.Init(direction);
 	}
 }
