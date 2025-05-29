@@ -1,6 +1,7 @@
 This is a practice project for godot and C#. 
 This is also my first time coding a game in C# and ever using Godot. 
 Since this is my first time using this engine I have been using Chat GPT to bridge the gap between my current C# knowledge and Godot C# syntax.
+Along with Chat GPT I have been using Godot documentation on the Godot website and C# documantation on the Microsoft website to help me make this.
 
 Kutos:
 Bullet sprite from: https://bdragon1727.itch.io/fire-pixel-bullet-16x16
